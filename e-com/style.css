@@ -70,6 +70,15 @@ p{
     background: rebeccapurple ;
 
 }
+.cart-btn{
+    display: inline-block;
+    color: white;
+    background-color: orange;
+    margin: 30px 10px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
 .header{
     background: radial-gradient(#fff, #ffd6d6);
 }
@@ -132,4 +141,17 @@ h4{
 .col-4:hover{
     transform: translateY(-5px);
 
+}
+.add-cart{
+    display: inline-block;
+    color: rebeccapurple;
+    background-color: pink;
+    padding: 8px 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+    transition: background 0.3s;
+
+}
+.add-cart:hover{
+    background-color: bisque;
 }
