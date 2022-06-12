@@ -31,7 +31,7 @@ a{
 p{
     color: #555;
 }
-.container{
+.container, .products-container{
     max-width: 1300px;
     margin: auto;
     padding-left: 25px;
@@ -154,4 +154,50 @@ h4{
 }
 .add-cart:hover{
     background-color: bisque;
+}
+
+/*------ cart page --------*/
+.products-container{
+    max-width: 600px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.product-header{
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgray;
+    margin: 0 auto;
+}
+.product-title{
+    width: 45%;
+}
+.price{
+    width: 15%;
+    
+    display: flex;
+    align-items: center;
+}
+.quantity{
+    width: 30%;
+    
+    display: flex;
+    align-items: center;
+}
+.total{
+    width: 10%;
+    
+    display: flex;
+    align-items: center;
+}
+.product{
+    width: 45%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
 }
