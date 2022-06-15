@@ -91,21 +91,47 @@ function totalCost(product){
 }
 
 function displayCart(){
-    let cartItems = localStorage.getItem('productsInCart');
+    let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
-    let productContainer = document.querySelector('.products')
+    let productContainer = document.querySelector('.products');
+    let cartCost = localStorage.getItem('totalCost');
 
-    if(cartItems && productContainer)
-    productContainer.innerHTML= '';
-    Object.values(cartItems).map(item =>{
-        productContainer.innerHTML += `
-        <div class"product"><ion-icon name="close-circle-outline"></ion-icon>
-        <img src="/images/${item.tag}.jpg">
-        <span>${item.name}</span>
-        </div>`
-    })
+    console.log(productContainer);
+
+    if(cartItems && productContainer){
+      productContainer.innerHTML = '';
+      Object.values(cartItems).map(item =>{
+        console.log(item)
+      productContainer.innerHTML += `<div class="product">
+      <img src="./images/${item.tag}.jpg">
+      <ion-icon name="close-circle-outline"></ion-icon>
+      <span>${item.name}</span>
+      </div>
+      <div class="price">${item.price}</div>
+      <div class="quantity">
+      <ion-icon name="remove-circle-outline"></ion-icon>
+      <span>${item.inCart}</span>
+      <ion-icon name="add-circle-outline"></ion-icon>
+      </div>
+      <div class="total">${item.inCart*item.price}</div>`
+      });
+
+      productContainer.innerHTML += `
+      <div class="basketTotalContainer">
+      <h4 class="basketTotalTitle">Basket Total</h4>
+      <h4 class="basketTotal">INR${cartCost}</h4>
+      </div>
+      `;
+      
+    }
 }
 
 
 onLoadCartNumbers();
 displayCart();
+
+window.addEventListener('DOMContentLoaded', () =>{
+    axios.get('http://localhost:5500/index.html').then((data) => {
+        console.log(data);
+    })
+})

@@ -163,6 +163,13 @@ h4{
     margin: 0 auto;
     margin-top: 50px;
 }
+.products-container ion-icon{
+    font-size: 25px;
+    color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer; 
+}
 
 .product-header{
     width: 100%;
@@ -200,4 +207,29 @@ h4{
     align-items: center;
     justify-content: space-around;
     padding: 10px 0;
+}
+.price{
+    width: 15%;
+    border-bottom: white;
+    display: flex;
+    align-items: center;
+}
+.quantity{
+    width: 30%;
+    border-bottom: white;
+    display: flex;
+    align-items: center;
+}
+.basketTotalContainer{
+    display: flex;
+    justify-content: flex-end;
+    width: 100;
+    padding: 10px 0;
+}
+.basketTotalTitle{
+    width: 30%;
+
+}
+.basketTotal{
+    width: 10%;
 }
