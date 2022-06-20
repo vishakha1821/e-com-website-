@@ -131,7 +131,38 @@ onLoadCartNumbers();
 displayCart();
 
 window.addEventListener('DOMContentLoaded', () =>{
-    axios.get('http://localhost:5500/index.html').then((data) => {
+    axios.get('http://localhost:5500/products').then((data) => {
         console.log(data);
+
+        if(data.request.status ===200){
+            const products = data.data.products;
+            const parentSection = document.getElementById('products');
+            products.array.forEach(product => {
+                const productHtml = `
+                <div>
+                <h1>${product.title}</h1>
+                <img src= ${product.imageUrl}>
+                <button onClick="addToCart(${product.id})">Add to Cart</button>
+                </div>
+                `
+                parentSection.innerHTML += productHtml;
+                
+            });
+        }
+        
     })
 })
+
+function addToCart(productId){
+    axios.post('http://localhost:5500/cart', {productId: productId})
+    .then(response => {
+        if(response.status === 200){
+         console.log('item added to cart');
+        }else{
+            throw new Error();
+        }
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
