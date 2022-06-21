@@ -51,6 +51,7 @@ function cartNumber(product){
         document.querySelector('.cart-btn span').textContent = 1;
     }
     setItems(product);
+    getCartDeatils();
    
 }
 function setItems(product){
@@ -164,5 +165,12 @@ function addToCart(productId){
     })
     .catch(err => {
         console.log(err);
+    })
+}
+
+function getCartDetails(){
+    axios.get('http://localhost:5500/cart')
+    .then(response => {
+
     })
 }
